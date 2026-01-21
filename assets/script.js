@@ -53,18 +53,24 @@ function renderGauges(setor, sensors) {
             <div class="sector-title">${setor}</div>
             <div class="gauges-container">
                 <div class="gauge">
-                    <canvas id="tempGauge" width="180" height="180"></canvas>
-                    <div class="gauge-value">${avgTemp.toFixed(1)}°</div>
+                    <div style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <canvas id="tempGauge" style="position: absolute; top: 0; left: 0;"></canvas>
+                        <div class="gauge-value" style="position: relative;">${avgTemp.toFixed(1)}°</div>
+                    </div>
                     <div class="gauge-label">Temperatura</div>
                 </div>
                 <div class="gauge">
-                    <canvas id="humGauge" width="180" height="180"></canvas>
-                    <div class="gauge-value">${avgHum.toFixed(1)}%</div>
+                    <div style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <canvas id="humGauge" style="position: absolute; top: 0; left: 0;"></canvas>
+                        <div class="gauge-value" style="position: relative;">${avgHum.toFixed(1)}%</div>
+                    </div>
                     <div class="gauge-label">Umidade</div>
                 </div>
                 <div class="gauge">
-                    <canvas id="pressGauge" width="180" height="180"></canvas>
-                    <div class="gauge-value">${avgPress.toFixed(1)}</div>
+                    <div style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <canvas id="pressGauge" style="position: absolute; top: 0; left: 0;"></canvas>
+                        <div class="gauge-value" style="position: relative;">${avgPress.toFixed(1)}</div>
+                    </div>
                     <div class="gauge-label">Pressão</div>
                 </div>
             </div>
@@ -102,7 +108,8 @@ function createGauge(canvasId, value, min, max, color) {
             }]
         },
         options: {
-            responsive: false,
+            responsive: true,
+            maintainAspectRatio: true,
             circumference: 180,
             rotation: 270,
             cutout: '80%',

@@ -179,22 +179,29 @@ header p {
     text-align: center;
     position: relative;
     width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .gauge canvas {
     display: block;
-    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .gauge-value {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #c0392b;
     font-family: 'Inter', monospace;
+    z-index: 10;
+    white-space: nowrap;
 }
 
 .gauge-label {
@@ -378,24 +385,90 @@ header p {
     text-transform: uppercase;
 }
 
+/* --- Início das Modificações de Responsividade --- */
 
+/* Ajuste para a tabela em telas menores */
+.table-container {
+    overflow-x: auto; /* Adiciona barra de rolagem horizontal se a tabela for muito larga */
+}
+
+/* Media Query para telas de tablets e menores (max-width: 768px) */
 @media (max-width: 768px) {
     .container { padding: 2rem 1rem; }
     header h1 { font-size: 1.8rem; }
-    .gauges-grid { grid-template-columns: 1fr; }
-    .gauges-container { flex-direction: column; gap: 1.5rem; }
+    
+    /* Altera o layout da grade de gauges para uma única coluna */
+    .gauges-grid { 
+        grid-template-columns: 1fr; 
+        gap: 1.5rem; /* Reduz o espaçamento */
+    }
+    
+    /* Ajusta o container dos gauges dentro do painel */
+    .gauges-container { 
+        flex-direction: row; 
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    /* Redimensiona os gauges para telas menores */
+    .gauge {
+        width: 150px;
+        height: 150px;
+    }
+    
+    /* Centraliza os botões de setor */
     .sectors-tabs { justify-content: center; }
+    
+    /* Reduz o tamanho da fonte e padding da tabela */
     .table { font-size: 0.85rem; }
     .table th, .table td { padding: 0.75rem 0.5rem; }
+    
+    /* Oculta colunas menos importantes na tabela para telas menores */
+    .table th:nth-child(4), /* Temperatura */
+    .table td:nth-child(4),
+    .table th:nth-child(5), /* Umidade */
+    .table td:nth-child(5),
+    .table th:nth-child(6), /* Pressão */
+    .table td:nth-child(6) {
+        display: none;
+    }
 }
 
+/* Media Query para telas de celular (max-width: 576px) */
 @media (max-width: 576px) {
+    /* Botões ocupam a largura total */
     .btn { width: 100%; margin-bottom: 0.5rem; }
+    
     header h1 { font-size: 1.5rem; }
+    
+    /* Ajusta o espaçamento e tamanho dos botões de aba */
     .sectors-tabs { gap: 0.5rem; }
     .tab-btn { padding: 0.6rem 1rem; font-size: 0.85rem; }
+    
+    /* Reduz o padding do container principal */
+    .container { padding: 1.5rem 0.5rem; }
+    
+    /* Garante que o gauge seja menor em celulares */
+    .gauge { 
+        width: 120px;
+        height: 120px;
+    }
+    .gauge-value { font-size: 1rem; }
+    .gauge-label { font-size: 0.8rem; margin-top: 0.5rem; }
+    
+    /* Ajusta o container dos gauges para celulares */
+    .gauges-container {
+        gap: 0.5rem;
+    }
+    
+    /* Oculta mais colunas na tabela para telas muito pequenas */
+    .table th:nth-child(3), /* Setor */
+    .table td:nth-child(3) {
+        display: none;
+    }
 }
 
-
+/* --- Fim das Modificações de Responsividade --- */
 
 @import url('https://rsms.me/inter/inter.css');

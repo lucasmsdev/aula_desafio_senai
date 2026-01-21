@@ -49,7 +49,7 @@
             <p>Monitoramento de Sensores por Setor</p>
         </header>
 
-        <div class="mb-4">
+        <div class="mb-4 d-grid d-sm-block">
             <a href="create.php" class="btn btn-success btn-lg">Novo Sensor</a>
         </div>
 
@@ -62,7 +62,6 @@
             <button class="tab-btn" data-setor="Fabrica">Fábrica</button>
             <button class="tab-btn" data-setor="Externa">Externa</button>
             <button class="tab-btn" data-setor="Armazem">Armazém</button>
-            <button class="tab-btn" data-setor="Geral">Geral</button>
         </div>
 
         <!-- Gauges dos setores -->
@@ -78,9 +77,9 @@
                         <th>ID</th>
                         <th>Sensor</th>
                         <th>Setor</th>
-                        <th>Temperatura</th>
-                        <th>Umidade</th>
-                        <th>Pressão</th>
+                        <th class="d-none d-md-table-cell">Temperatura</th>
+                        <th class="d-none d-md-table-cell">Umidade</th>
+                        <th class="d-none d-md-table-cell">Pressão</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
