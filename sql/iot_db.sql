@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 21/01/2026 às 23:54
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Host: sql306.infinityfree.com
+-- Tempo de geração: 21/01/2026 às 20:28
+-- Versão do servidor: 11.4.9-MariaDB
+-- Versão do PHP: 7.2.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `iot_db`
+-- Banco de dados: `if0_40962004_iot_db`
 --
 
 -- --------------------------------------------------------
@@ -42,16 +43,24 @@ CREATE TABLE `sensor_readings` (
 --
 
 INSERT INTO `sensor_readings` (`id`, `device_id`, `temperature`, `humidity`, `pressure`, `created_at`, `setor`) VALUES
-(103, 'sala_01', 27.97, 59.10, 999.99, '2026-01-16 04:56:52', 'Geral'),
-(104, 'sensor teste', 48.21, 55.90, 999.99, '2026-01-16 04:57:05', 'Geral'),
-(106, 'Sensor-Fabrica02', 44.91, 41.50, 998.60, '2026-01-16 04:58:33', 'Geral'),
-(107, 'SalaA-Temp', 19.14, 61.70, 999.99, '2026-01-18 15:33:13', 'Sala'),
-(108, 'FabricaB-Hum', 34.27, 98.50, 999.99, '2026-01-18 15:33:13', 'Fabrica'),
-(109, 'ExternaC-Press', 33.11, 53.60, 999.99, '2026-01-18 15:33:13', 'Externa'),
-(110, 'sala_01', 42.90, 38.50, 999.99, '2026-01-18 15:34:52', 'Sala');
+(108, 'Fabrica_A1', '47.37', '42.30', '999.99', '2026-01-18 15:33:13', 'Fabrica'),
+(109, 'Externa_A1', '28.78', '53.30', '999.99', '2026-01-18 15:33:13', 'Externa'),
+(110, 'sala_escritorio', '46.91', '31.90', '999.99', '2026-01-18 15:34:52', 'Sala'),
+(114, 'Armazem_A1', '31.94', '60.60', '999.99', '2026-01-21 23:38:07', 'Armazem'),
+(115, 'Armazem_A2', '33.48', '98.80', '999.99', '2026-01-21 23:38:35', 'Armazem'),
+(116, 'Armazem_B1', '41.50', '50.90', '999.99', '2026-01-21 23:38:45', 'Armazem'),
+(117, 'Fabrica_A2', '49.89', '82.70', '990.50', '2026-01-21 23:40:28', 'Fabrica'),
+(118, 'Fabrica_A3', '20.84', '27.50', '999.99', '2026-01-21 23:40:33', 'Fabrica'),
+(119, 'Fabrica_B1', '24.36', '79.90', '999.99', '2026-01-21 23:40:38', 'Fabrica'),
+(120, 'Fabrica_B2', '31.21', '29.30', '999.99', '2026-01-21 23:40:45', 'Fabrica'),
+(121, 'Fabrica_D1', '47.72', '79.90', '999.99', '2026-01-21 23:40:52', 'Fabrica'),
+(122, 'Externa_A2', '29.81', '79.70', '999.99', '2026-01-21 23:41:26', 'Externa'),
+(123, 'Externa_B1', '49.28', '36.50', '999.99', '2026-01-21 23:41:33', 'Externa'),
+(124, 'Externa_D1', '27.13', '99.30', '999.99', '2026-01-21 23:41:41', 'Externa'),
+(125, 'Externa_D2', '39.32', '71.80', '999.20', '2026-01-21 23:41:46', 'Externa');
 
 --
--- Índices para tabelas despejadas
+-- Índices de tabelas apagadas
 --
 
 --
@@ -61,14 +70,14 @@ ALTER TABLE `sensor_readings`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas apagadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `sensor_readings`
 --
 ALTER TABLE `sensor_readings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
