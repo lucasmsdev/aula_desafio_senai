@@ -57,7 +57,6 @@ if ($_POST) {
                                 <option value="Fabrica">Fábrica</option>
                                 <option value="Externa">Externa</option>
                                 <option value="Armazem">Armazém</option>
-                                <option value="Geral">Geral</option>
                             </select>
                         </div>
                         
